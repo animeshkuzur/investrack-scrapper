@@ -67,7 +67,7 @@ def sql_insert(scode,sname,asset,repurchase,sale,date):
 	try:
 	 	payout = "-"
 	 	reinvest = "-"
-	 	conn = MySQLdb.connect("localhost","investrack_root","Investrack@123#","investrack")
+	 	conn = MySQLdb.connect("localhost","username","password","database")
 	 	c = conn.cursor()
 	 	c.execute("""INSERT INTO nav_detail (schemeCode,iSINDivPayout,iSINDivReinvestment,SchemeName,NetAssetValue,RepurchasePrice,SalePrice,policyDate) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)""",(scode,payout,reinvest,sname,asset,repurchase,sale,date))
 	 	conn.commit()
